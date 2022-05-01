@@ -2,8 +2,11 @@ import { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
+import { createTransferTransaction as createTransferTransactionV2 } from './symbol-sdk-v2'
+import { createTransferTransaction as createTransferTransactionV3 } from './symbol-sdk-v3'
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [payload, setPayload] = useState('')
 
   return (
     <div className="App">
@@ -11,10 +14,14 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
         <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
+          <button type="button" onClick={() => setPayload(createTransferTransactionV2())}>
+            Generate Payload (v2.x)
+          </button>
+          <button type="button" onClick={() => setPayload(createTransferTransactionV3())}>
+            Generate Payload (v3.x)
           </button>
         </p>
+        <code style={{overflowWrap: 'anywhere'}}>{payload}</code>
         <p>
           Edit <code>App.tsx</code> and save to test HMR updates.
         </p>
