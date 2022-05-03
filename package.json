@@ -8,8 +8,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@rollup/plugin-inject": "^4.0.4",
+    "@types/node": "^17.0.31",
+    "node-stdlib-browser": "^1.2.0",
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "symbol-sdk": "^2.0.0",
+    "symbol-sdk-3": "npm:symbol-sdk@^3.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",
