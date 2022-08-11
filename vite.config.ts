@@ -32,12 +32,15 @@ export default defineConfig({
     alias: stdLibBrowser,
   },
   optimizeDeps: {
+    esbuildOptions: {
+      target: 'esnext',
+    },
     include: [
       'buffer',
       'process',
-    ]
+    ],
   },
   build: {
-    target: 'es2020'
+    target: 'esnext'
   }
 })
